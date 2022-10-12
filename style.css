@@ -1,0 +1,2106 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&family=Saira:wght@300;400&display=swap');
+
+/* font-family: 'Saira', sans-serif;
+font-family: 'Saira Condensed', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+/* NAGŁÓWEK - WELCOME */
+
+header {
+    position: relative;
+    height: 100vh;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #cbd8dc;
+    overflow: hidden;
+}
+
+div.welcome {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    right: 5%;
+    text-align: center;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: rgb(39, 33, 33);
+    z-index: 1;
+}
+
+header h1 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+header h2 {
+    font-weight: 500;
+    font-size: 18px;
+    color: #0170ba;
+}
+
+header button {
+    line-height: 32px;
+    padding: 5px 10px;
+    border: 1px solid rgb(39, 33, 33);
+    margin-top: 40px;
+    margin-left: 100px;
+    font-size: 16px;
+    font-family: 'Saira', sans-serif;
+    font-weight: 300;
+    background-color: rgba(255, 255, 255, 0.356);
+    text-transform: uppercase;
+    color: rgb(39, 33, 33);
+}
+
+.myphoto {
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    height: 44%;
+    animation: color 20s ease-in-out infinite both;
+}
+
+.myphotogray {
+    position: absolute;
+    bottom: 0;
+    right: -30%;
+    height: 110%;
+    opacity: .3;
+    z-index: 0;
+    animation: gray 20s ease-in-out infinite both;
+}
+
+.menuBtn {
+    position: absolute;
+    top: 2%;
+    left: -36%;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: transparent;
+    z-index: 1;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.menuBtn.off {
+    display: none;
+}
+
+.fa-bars {
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    /* transform: rotate(0deg); */
+    color: black;
+    z-index: 2;
+    transition: .4s;
+}
+
+.fa-bars.off {
+    display: none;
+}
+
+.fa-xmark {
+    display: none;
+}
+
+.fa-xmark.off {
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    text-shadow: 0 0 4px black, 0 0 6px black;
+    z-index: 2;
+    transition: .4s;
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    height: 100vh;
+    background-color: rgb(39, 33, 33);
+    letter-spacing: 1.2px;
+    z-index: 1;
+    transition: .4s;
+}
+
+.navigation.active .menuBtn {
+    display: block;
+}
+
+.navigation.off {
+    right: -40vw;
+}
+
+.navigation ul li {
+    list-style: none;
+}
+
+.navigation ul li a {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 20px 10px 0 ;
+    font-family: 'Saira Condensed', sans-serif;
+    text-decoration: none;
+    text-align: right;
+    text-transform: uppercase;
+    color: white;
+}
+
+.navigation ul li a {
+    position: relative;
+}
+
+.navigation ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 98%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #0170ba;
+    transition: .5s;
+    z-index: -1;
+}
+
+.goback {
+    position: fixed;
+    right: 2%;
+    bottom: -8%;
+}
+
+.goback.active {
+    bottom: 3%;
+    right: 2%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-color: #333;
+    text-align: center;
+    box-shadow: 0 0 1px 2px #333, 0 0 2px 3px #000;
+    border-radius: 50px;
+    transition: .5s;
+    z-index: 10;
+}
+
+.fa-angles-up {
+    line-height: 32px;
+    font-size: 14px;
+    color: #eee;
+}
+
+@keyframes color {
+    0% {
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-6%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+  }
+
+  @keyframes gray {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: .3;
+    }
+    50%{
+        transform: translateX(4%) scale(1.1);
+        opacity: .1;
+
+    }
+    100%{
+        transform: translateX(0) scale(1);
+        opacity: .3;
+    }
+  }
+
+/* LANDSCAPE */
+
+@media (orientation: landscape) {
+    .myphoto {
+        right: 0%;
+        height: 60%;
+    }
+
+    .myphotogray {
+        bottom: -10%;
+        right: -5%;
+        height: 130%;
+    }
+
+    div.welcome {
+        top: 13%;
+        left: 5%;
+        right: 50%;
+    }
+
+    header button {
+        padding: 5px 15px;
+        font-size: 18px;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+
+    .menuBtn {
+        top: 3%;
+        left: -28%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .navigation {
+        width: 35vw;
+    }
+    
+    .navigation.off {
+        right: -35vw;
+    }
+}
+
+/* @media (orientation: landscape) and (max-height: 280px) FOLD???? */
+
+@media (orientation: landscape) and (min-width: 640px) {
+    div.welcome {
+        top: 13%;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header h2 {
+        font-size: 20px;
+    }
+
+    header button {
+        padding: 10px 20px;
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+    .myphotogray {
+        bottom: 0;
+        right: 5%;
+        height: 115%;
+    }
+    
+    .menuBtn {
+        top: 4%;
+        left: -30%;
+        width: 44px;
+        height: 44px;
+    }
+    
+    .fa-bars {
+        line-height: 44px;
+        font-size: 24px;
+    }
+    
+    .fa-xmark.off {
+        line-height: 44px;
+        font-size: 24px;
+    }
+    
+    .navigation {
+        width: 30vw;
+    }
+    
+    .navigation.off {
+        right: -30vw;
+    }
+    
+    .navigation ul li a {
+        font-size: 18px;
+        padding: 10px 20px 10px 0 ;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 740px) {
+    div.welcome {
+        top: 16%;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header h2 {
+        font-size: 20px;
+    }
+
+    .myphoto {
+        height: 65%;
+        right: 5%;
+    }
+
+    header button {
+        padding: 10px 30px;
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+    .myphotogray {
+        bottom: 0;
+        right: 12%;
+        height: 120%;
+    }
+    
+    .menuBtn {
+        top: 4%;
+        left: -30%;
+        width: 44px;
+        height: 44px;
+    }
+    
+    .fa-bars {
+        line-height: 44px;
+        font-size: 24px;
+    }
+    
+    .fa-xmark.off {
+        line-height: 44px;
+        font-size: 24px;
+    }
+    
+    .navigation {
+        width: 25vw;
+    }
+    
+    .navigation.off {
+        right: -25vw;
+    }
+    
+    .navigation ul li a {
+        font-size: 20px;
+        padding: 10px 20px 10px 0 ;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    div.welcome {
+        top: 24%;
+        font-size: 66px;
+    }
+
+    header h1 {
+        margin-top: 20px;
+        font-size: 44px;
+    }
+
+    header h2 {
+        font-size: 30px;
+    }
+
+    header button {
+        margin-top: 60px;
+        line-height: 60px;
+        font-size: 26px;
+        padding: 10px 60px;
+    }
+
+    .myphoto {
+        height: 50%;
+        right: 2%;
+    }
+
+    .myphotogray {
+        bottom: 0;
+        right: -5%;
+        height: 120%;
+    }
+    
+    .menuBtn {
+        top: 4%;
+        left: -28%;
+        width: 48px;
+        height: 48px;
+    }
+    
+    .fa-bars {
+        line-height: 48px;
+        font-size: 36px;
+    }
+    
+    .fa-xmark.off {
+        line-height: 48px;
+        font-size: 36px;
+    }
+    
+    .navigation {
+        width: 29vw;
+    }
+    
+    .navigation.off {
+        right: -29vw;
+    }
+    
+    .navigation ul li a {
+        font-size: 24px;
+        padding: 15px 20px 15px 0 ;
+    }
+    
+    .goback.active {
+        bottom: 3%;
+        right: 2%;
+        width: 44px;
+        height: 44px;
+    }
+
+    .goback.active:hover {
+        background-color: #0170ba;
+        box-shadow: 0 0 5px 2px black;
+    }
+    
+    .fa-angles-up {
+        line-height: 44px;
+        font-size: 20px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1240px) {
+    div.welcome {
+        top: 30%;
+        margin-left: 40px;
+        font-size: 86px;
+        text-align: left;
+    }
+
+    header h1 {
+        margin-top: 10px;
+        font-size: 52px;
+    }
+
+    header h2 {
+        font-size: 34px;
+    }
+
+    header button {
+        margin-top: 50px;
+        padding: 5px 40px;
+        line-height: 70px;
+        font-size: 30px;
+    }
+
+    .myphoto {
+        height: 50%;
+        right: 3%;
+    }
+
+    .myphotogray {
+        bottom: 0;
+        right: 3%;
+        height: 120%;
+    }
+    
+    .menuBtn {
+        top: 4%;
+        left: -28%;
+        width: 52px;
+        height: 52px;
+    }
+    
+    .fa-bars {
+        line-height: 52px;
+        font-size: 38px;
+    }
+    
+    .fa-xmark.off {
+        line-height: 52px;
+        font-size: 38px;
+    }
+    
+    .navigation {
+        width: 24vw;
+    }
+    
+    .navigation.off {
+        right: -24vw;
+    }
+    
+    .navigation ul li a {
+        font-size: 26px;
+        padding: 15px 20px 15px 0 ;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1440px) {
+    div.welcome {
+        top: 18%;
+        font-size: 110px;
+    }
+
+    header h1 {
+        margin-top: 10px;
+        font-size: 58px;
+    }
+
+    header h2 {
+        font-size: 38px;
+    }
+
+    header button {
+        padding: 0px 40px;
+        margin-top: 0;
+        line-height: 80px;
+        font-size: 34px;
+    }
+
+    .myphoto {
+        height: 55%;
+        right: 3%;
+    }
+
+    .myphotogray {
+        bottom: -5%;
+        right: 7%;
+        height: 125%;
+    }
+    
+    .menuBtn {
+        top: 4%;
+        left: -28%;
+        width: 52px;
+        height: 52px;
+    }
+    
+    .fa-bars {
+        line-height: 52px;
+        font-size: 38px;
+    }
+    
+    .fa-xmark.off {
+        line-height: 52px;
+        font-size: 38px;
+    }
+    
+    .navigation {
+        width: 23vw;
+    }
+    
+    .navigation.off {
+        right: -23vw;
+    }
+    
+    .navigation ul li a {
+        font-size: 28px;
+        padding: 15px 35px 15px 0 ;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1600px) {
+    div.welcome {
+        top: 20%;
+        font-size: 130px;
+    }
+
+    header h1 {
+        margin-top: 10px;
+        font-size: 64px;
+    }
+
+    header h2 {
+        font-size: 42px;
+    }
+
+    header button {
+        padding: 0px 60px;
+        line-height: 90px;
+        font-size: 36px;
+    }
+
+    .myphoto {
+        height: 55%;
+        right: 3%;
+    }
+
+    .myphotogray {
+        bottom: -7%;
+        right: 10%;
+        height: 130%;
+    }
+    
+    .menuBtn {
+        top: 4%;
+        left: -26%;
+        width: 52px;
+        height: 52px;
+    }
+    
+    .fa-bars {
+        font-size: 44px;
+    }
+    
+    .fa-xmark.off {
+        font-size: 44px;
+    }
+    
+    .navigation {
+        width: 20vw;
+    }
+    
+    .navigation.off {
+        right: -20vw;
+    }
+    
+    .navigation ul li a {
+        font-size: 32px;
+        padding: 15px 36px 15px 0 ;
+    }
+}
+
+@media (min-width: 1024px) {
+    header button {
+        cursor: pointer;
+        transition: .6s;
+    }
+
+    header button:hover {
+        background-color: #fff;
+        color: #111;
+        letter-spacing: 4px;
+    }
+
+    .navigation ul li a:hover::before {
+        left: 0;
+    }
+}
+
+/* PORTRAIT */
+
+@media (min-width: 280px) and (max-width: 319px) {
+    div.welcome {
+        top: 13%;
+    }
+
+    header h1 {
+        margin-top: 10px;
+        font-size: 28px;
+    }
+
+    header h2 {
+        font-size: 20px;
+    }
+
+    .myphoto {
+        height: 38%;
+        right: 0;
+    }
+
+    header button {
+        line-height: 32px;
+        padding: 8px 10px;
+        margin-top: 60px;
+        margin-left: 80px;
+        font-size: 16px;
+    }
+
+    .myphotogray {
+        bottom: -5%;
+        right: -70%;
+        height: 110%;
+    }
+    
+    .menuBtn {
+        top: 2%;
+        left: -36%;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .navigation {
+        width: 45vw;
+    }
+    
+    .navigation.off {
+        right: -45vw;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 360px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header h2 {
+        font-size: 22px;
+    }
+
+    header button {
+        font-size: 18px;
+        padding: 5px 10px;
+        line-height: 32px;
+        margin-top: 80px;
+        margin-left: 110px;
+    }
+
+    .myphoto {
+        height: 40%;
+        right: 5%;
+    }
+    
+    .myphotogray {
+        bottom: 0;
+        right: -40%;
+        height: 110%;
+    }
+    
+    .navigation {
+        width: 45vw;
+    }
+    
+    .navigation.off {
+        right: -45vw;
+    }
+    
+    .navigation ul li a {
+        font-size: 20px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 413px) {
+    div.welcome {
+        font-size: 48px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    header h2 {
+        font-size: 26px;
+    }
+
+    header button {
+        font-size: 22px;
+        padding: 10px 15px;
+        line-height: 32px;
+        margin-top: 80px;
+        margin-left: 110px;
+    }
+
+    .myphoto {
+        height: 40%;
+        right: 5%;
+    }
+    
+    .myphotogray {
+        bottom: 0;
+        right: -40%;
+        height: 110%;
+    }
+    
+    .navigation {
+        width: 45vw;
+    }
+    
+    .navigation.off {
+        right: -45vw;
+    }
+    
+    .navigation ul li a {
+        font-size: 20px;
+    }
+}
+
+
+
+@media (orientation: portrait) and (min-height: 785px) {
+    div.welcome {
+        top: 10%;
+        font-size: 50px;
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header h2 {
+        font-size: 24px;
+    }
+
+    header button {
+        line-height: 46px;
+        padding: 5px 20px;
+        margin-top: 100px;
+        font-size: 22px;
+    }
+
+    .myphoto {
+        right: 5%;
+        height: 40%;
+    }
+
+    .myphotogray {
+        bottom: 0;
+        right: -50%;
+        height: 105%;
+    }
+
+    .menuBtn {
+        top: 3%;
+    }
+    
+    .fa-bars {
+        line-height: 40px;
+        font-size: 28px;
+    }
+    
+    .fa-xmark.off {
+        line-height: 40px;
+        font-size: 30px;
+    }
+    
+    .navigation ul li a {
+        font-size: 22px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 760px) {
+    div.welcome {
+        top: 10%;
+        font-size: 74px;
+    }
+
+    header h1 {
+        font-size: 52px;
+    }
+
+    header h2 {
+        font-size: 38px;
+    }
+
+    header button {
+        line-height: 46px;
+        padding: 15px 35px;
+        font-size: 32px;
+        margin-left: 280px;
+    }
+
+
+    .myphoto {
+        right: 10%;
+        height: 45%;
+    }
+
+    .myphotogray {
+        bottom: 0;
+        right: -10%;
+        height: 105%;
+    }
+
+    .menuBtn {
+        top: 3%;
+        left: -22%;
+        width: 44px;
+        height: 44px;
+    }
+    
+    .fa-bars {
+        line-height: 44px;
+        font-size: 36px;
+    }
+    
+    .fa-xmark.off {
+        line-height: 44px;
+        font-size: 38px;
+    }
+    
+    .navigation ul li a {
+        font-size: 28px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 1024px) {
+    div.welcome {
+        top: 10%;
+        font-size: 90px;
+    }
+
+    header h1 {
+        font-size: 66px;
+    }
+
+    header h2 {
+        font-size: 44px;
+    }
+
+    header button {
+        line-height: 68px;
+        margin-top: 160px;
+        margin-left: 400px;
+        font-size: 36px;
+    }
+
+    .myphoto {
+        right: 6%;
+        height: 45%;
+    }
+
+    .myphotogray {
+        bottom: 0;
+        right: -10%;
+        height: 105%;
+    }
+
+    .menuBtn {
+        top: 3%;
+        left: -20%;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .fa-bars {
+        line-height: 50px;
+        font-size: 48px;
+    }
+    
+    .fa-xmark.off {
+        line-height: 50px;
+        font-size: 48px;
+    }
+    
+    .navigation ul li a {
+        font-size: 38px;
+        padding: 18px 20px 18px 0 ;
+    }
+
+    .goback.active {
+        bottom: 4%;
+        right: 2%;
+        width: 48px;
+        height: 48px;
+    }
+    
+    .fa-angles-up {
+        line-height: 48px;
+        font-size: 24px;
+    }
+}
+
+/* Sekcja 1 - MOJE CECHY */
+
+.features {
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 5%;
+    text-align: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.61), #299deace);
+}
+
+.features h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.features img {
+    width: 90%;
+    margin: 15px 0;
+    animation: float 10s ease-in-out both infinite;
+}
+
+.features img.float2 {
+    animation: float2 10s ease-in-out both infinite;
+}
+
+.features h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.features h2::after {
+    content: "";
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    box-shadow: 0 0 0px 1px #333;
+}
+
+.description {
+    margin: 20px 0;
+    padding: 10px;
+    font-family: 'Saira', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.bold {
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.356);
+}
+
+.description::after {
+    content: "";
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    box-shadow: 0 0 0px 1px #333;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes float2 {
+    0% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+@media (min-width: 360px) {
+    .features h1 {
+        font-size: 28px;
+    }
+
+    .features h2 {
+        font-size: 24px;
+    }
+
+    .features img {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 410px) {
+    .features h1 {
+        font-size: 30px;
+    }
+
+    .features h2 {
+        font-size: 26px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    .features img {
+        width: 75%;
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 760px) {
+    .features h1 {
+        font-size: 50px;
+    }
+
+    .features h2 {
+        font-size: 40px;
+    }
+
+    .description {
+        font-size: 28px;
+    }
+
+    .features img {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .features h1 {
+        font-size: 64px;
+    }
+
+    .features h2 {
+        font-size: 54px;
+    }
+
+    .description {
+        font-size: 36px;
+    }
+
+    .features img {
+        width: 64%;
+    }
+}
+
+/* Orientation landscape */
+
+@media (orientation: landscape) and (min-width: 650px) {
+    .features h1 {
+        font-size: 42px;
+    }
+
+    .features h2 {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 24px;
+    }
+
+    .features img {
+        width: 60%;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 820px) {
+    .features h1 {
+        font-size: 48px;
+    }
+
+    .features h2 {
+        font-size: 38px;
+    }
+
+    .description {
+        font-size: 26px;
+    }
+
+    .features img {
+        width: 55%;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    .features h1 {
+        font-size: 58px;
+    }
+
+    .features h2 {
+        font-size: 48px;
+    }
+
+    .description {
+        font-size: 28px;
+    }
+
+    .features img {
+        width: 60%;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1240px) {
+    .features {
+        margin-top: 30px;
+        padding: 5% 2%;
+        text-align: center;
+    }
+
+    .feature {
+        float: left;
+        width: 33.33%;
+        padding: 20px;
+    }
+
+    .features h1 {
+        font-size: 38px;
+    }
+
+    .features h2 {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 20px;
+    }
+
+    .features img {
+        width: 80%;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1440px) {
+    .features h1 {
+        font-size: 40px;
+    }
+
+    .features h2 {
+        font-size: 26px;
+    }
+
+    .description {
+        font-size: 22px;
+        padding: 20px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1600px) {
+    .feature {
+        padding: 30px;
+    }
+
+    .features h1 {
+        font-size: 60px;
+    }
+
+    .features h2 {
+        font-size: 36px;
+    }
+
+    .features img {
+        width: 80%;
+    }
+}
+
+/* Sekcja 2 - PORTFOLIO */
+
+.portfolio {
+    background-color: black;
+    padding: 10px 0 4px;
+    overflow-x: hidden;
+}
+
+.portfolio h1 {
+    font-size: 28px;
+    line-height: 300%;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.portfolio .project {
+    max-width: 1400px;
+    margin: 0 auto 20px;
+    transition: 1.8s;
+}
+
+.project2, .project4 {
+    transform: translateX(-20vw);
+    opacity: 0;
+}
+
+.project2.active, .project4.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.project3 {
+    transform: translateX(20vw);
+    opacity: 0;
+}
+
+.project3.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.portfolio .web img {
+    width: 100%;
+}
+
+.portfolio .about {
+    padding: 10px 20px 20px 0;
+    font-family: 'Saira', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+.portfolio .about h2 {
+    padding-bottom: 10px;
+    text-indent: 20px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid white;
+    font-size: 18px;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.portfolio .about p {
+    padding-left: 20px;
+    font-size: 12px;
+}
+
+.portfolio .project:nth-of-type(odd) {
+
+    background-color: #0170ba;
+}
+
+.portfolio .project:nth-of-type(even) {
+    background-color: #F24C27;
+}
+
+/* PORTRAIT */
+
+@media (orientation: portrait) and (min-width: 410px) {
+    .portfolio h1 {
+        font-size: 30px;
+    }
+
+    .portfolio .about h2 {
+        font-size: 22px;
+    }
+
+    .portfolio .about p {
+        font-size: 16px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 760px) {
+    .portfolio .project {
+        margin-bottom: 40px;
+    }
+
+    .portfolio .about {
+        padding: 10px 40px 20px 0;
+    }
+
+    .portfolio h1 {
+        font-size: 40px;
+    }
+
+    .portfolio .about h2 {
+        font-size: 28px;
+        text-indent: 40px;
+    }
+
+    .portfolio .about p {
+        padding-left: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 1024px) {
+
+    .project .web,
+    .about {
+        float: left;
+        width: 50%;
+    }
+
+    .web img {
+        display: block;
+    }
+
+    .project:nth-of-type(even) .web,
+    .about {
+        float: right;
+    }
+
+    .portfolio .project {
+        margin-bottom: 50px;
+    }
+
+    .portfolio h1 {
+        font-size: 54px;
+    }
+
+    .portfolio .about h2 {
+        font-size: 34px;
+    }
+
+    .portfolio .about p {
+        padding-left: 40px;
+        font-size: 20px;
+    }
+}
+
+/* LANDSCAPE */
+
+@media (orientation: landscape) {
+
+    .project .web,
+    .about {
+        float: left;
+        width: 50%;
+    }
+
+    .web {
+        height: 50%;
+        width: auto;
+    }
+
+    .web img {
+        display: block;
+    }
+
+    .project:nth-of-type(even) .web,
+    .about {
+        float: right;
+    }
+
+    .project:nth-of-type(even) .about {
+        padding: 10px 0 20px 50px;
+    }
+
+    .project:nth-of-type(even) .about h2 {
+        text-indent: 0;
+    }
+
+    .project:nth-of-type(even) .about p {
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    .portfolio .project {
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .portfolio .about {
+        padding: 10px 40px 20px 0;
+    }
+
+    .portfolio h1 {
+        font-size: 40px;
+    }
+
+    .portfolio .about h2 {
+        font-size: 28px;
+        text-indent: 40px;
+    }
+
+    .portfolio .about p {
+        padding-left: 40px;
+        font-size: 18px;
+    }
+
+    .project .web a img{
+        display: block;
+        transition: .3s ease-in-out;
+    }
+
+    .project:nth-of-type(odd) .web a::after{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 50%;
+        background-image: url(images/eye-scanner.png);
+        background-position: 50% 130%;
+        background-repeat: no-repeat;
+        background-color: rgba(255, 255, 255, 0.801);
+        opacity: 0;
+        transition: .4s;
+    }
+
+    .project:nth-of-type(even) .web a::after{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        right: 0;
+        background-image: url(images/eye-scanner.png);
+        background-position: 50% 130%;
+        background-repeat: no-repeat;
+        background-color: rgba(255, 255, 255, 0.801);
+        opacity: 0;
+        transition: .4s;
+    }
+
+    .project:nth-of-type(odd) .web a:hover::after {
+        background-position: center;
+        opacity: 1;
+    }
+
+    .project:nth-of-type(even) .web a:hover::after {
+        background-position: center;
+        opacity: 1;
+    }
+
+
+}
+
+@media (orientation: landscape) and (min-width: 1240px) {
+    .portfolio .project {
+        margin-bottom: 20px;
+    }
+
+    .portfolio .about {
+        padding: 10px 50px 20px 0;
+    }
+
+    .portfolio h1 {
+        font-size: 45px;
+    }
+
+    .portfolio .about h2 {
+        font-size: 28px;
+        text-indent: 40px;
+    }
+
+    .portfolio .about p {
+        padding-left: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1440px) {
+    .portfolio .project {
+        margin-bottom: 50px;
+    }
+
+    .portfolio .about {
+        padding: 10px 50px 20px 0;
+    }
+
+    .portfolio h1 {
+        font-size: 54px;
+    }
+
+    .portfolio .about h2 {
+        font-size: 32px;
+        text-indent: 40px;
+    }
+
+    .portfolio .about p {
+        padding-left: 40px;
+        font-size: 20px;
+    }
+}
+
+/* SEKCJA 4 - Moje Motto */
+
+.motto {
+    text-align: center;
+    background-image: url(images/motto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.motto .bg {
+    padding: 56px 16px;
+    background-color: rgba(0, 63, 114, 0.503);
+}
+
+.motto h1 {
+    padding-bottom: 16px;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.motto p {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Saira', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.motto .author {
+    padding-top: 25px;
+    font-size: 14px;
+}
+
+/* PORTRAIT */
+
+@media (orientation: portrait) and (min-width: 760px) {
+    .motto .bg {
+        padding: 86px 16px;
+    }
+
+    .motto h1 {
+        padding-bottom: 20px;
+        font-size: 38px;
+    }
+
+    .motto p {
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 24px;
+    }
+
+    .motto .author {
+        padding-top: 35px;
+        font-size: 20px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 1024px) {
+    .motto .bg {
+        padding: 102px 16px;
+    }
+
+    .motto h1 {
+        padding-bottom: 30px;
+        font-size: 48px;
+    }
+
+    .motto p {
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 32px;
+    }
+
+    .motto .author {
+        padding-top: 40px;
+        font-size: 28px;
+    }
+}
+
+/* LANDSCAPE */
+
+@media (orientation: landscape) {
+    .motto .bg {
+        padding: 70px 16px;
+    }
+
+    .motto p {
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    .motto .bg {
+        padding: 88px 16px;
+    }
+
+    .motto h1 {
+        padding-bottom: 30px;
+        font-size: 42px;
+    }
+
+    .motto p {
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 26px;
+    }
+
+    .motto .author {
+        padding-top: 40px;
+        font-size: 22px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1240px) {
+    .motto .bg {
+        padding: 104px 16px;
+    }
+
+    .motto p {
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (orientation: landscape) and (min-width: 1440px) {
+    .motto .bg {
+        padding: 114px 16px;
+    }
+
+    .motto p {
+        max-width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1600px) {
+    .motto .bg {
+        padding: 134px 16px;
+    }
+
+    .motto p {
+        max-width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* SEKCJA 5 - MOJE HOBBY */
+
+.hobby {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.hobby .item {
+    height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.item:nth-of-type(1) {
+    background-image: url(images/hobby1.jpg);
+}
+
+.item:nth-of-type(2) {
+    background-image: url(images/hobby2.jpg);
+}
+
+.item:nth-of-type(3) {
+    background-image: url(images/hobby3.jpg);
+}
+
+.item:nth-of-type(4) {
+    background-image: url(images/hobby4.jpg);
+}
+
+.hobby h1 {
+    padding: 30px 20px;
+    font-size: 24px;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.hobby .item p {
+    line-height: 40vh;
+    font-family: 'Saira', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 533px) {
+    .hobby .item {
+        float: left;
+        width: 50%;
+    }
+}
+
+@media (min-width: 760px) {
+    .hobby h1 {
+        font-size: 36px;
+    }
+
+    .hobby .item p {
+        font-size: 20px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 1024px) {
+    .hobby h1 {
+        font-size: 50px;
+    }
+
+    .hobby .item p {
+        font-size: 28px;
+    }
+}
+
+/* LANDSCAPE */
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    .hobby .item {
+        height: 40vh;
+        background-size: 100%;
+        transition: 0.8s;
+    }
+    .hobby .item p {
+        line-height: 40vh;
+        font-size: 24px;
+        opacity: 0;
+        transition: 0.6s;
+        cursor: default;
+    }
+
+    .hobby .item:hover p {
+        opacity: 1;
+    }
+
+    .hobby .item:hover {
+        background-size: 130%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .hobby h1 {
+        padding: 30px 20px;
+        font-size: 45px;
+    }
+
+    .hobby .item p {
+        font-size: 28px;
+    }
+}
+
+/* SEKCJA 6 - KONTAKT */
+
+.contact {
+    background-color: #000;
+    padding: 20px 20px;
+}
+
+.contact .wrap {
+    padding-top: 20px;
+    margin: 0 20px;
+}
+
+.contact h1 {
+    padding: 20px 10px;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+.contact input, .contact button, .contact textarea {
+    width: 100%;
+    margin-bottom: 24px;
+    font-family: 'Saira', sans-serif;
+    font-size: 12px;
+}
+
+.contact input {
+    height: 36px;
+}
+
+.contact textarea {
+    height: 20vh;
+}
+
+.contact button {
+    line-height: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: #000;
+    border: 1px solid white;
+    color: white;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.contact .socials {
+    padding-top: 30px;
+    font-family: 'Saira', sans-serif;
+    font-size: 0;
+    color: white;
+}
+
+.contact .social {
+    padding: 10px 0;
+}
+
+.social img {
+    float: left;
+    height: 36px;
+}
+
+.social span {
+    float: left;
+    padding-left: 20px;
+    line-height: 36px;
+    font-size: 14px;
+}
+
+@media (min-width: 280px) and (max-width: 319px) {
+    .contact .wrap {
+        margin: 0;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 360px) {
+    .contact .wrap {
+        margin: 0 30px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+    .contact .wrap {
+        margin: 0 40px;
+    }
+}
+
+@media (min-width: 533px) {
+    .contact .social {
+        display: inline-block;
+        width: 50%;
+    }
+
+    .social span {
+        padding-left: 15px;
+        padding-right: 8px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 760px) {
+    .contact h1 {
+        font-size: 36px;
+    }
+
+    .contact input {
+        font-size: 18px;
+    }
+
+    .contact textarea {
+        font-size: 18px;
+    }
+
+    .social span {
+        font-size: 16px;
+    }
+
+    .contact button {
+        line-height: 60px;
+        font-size: 18px;
+    }
+}
+
+/* LANDSCAPE */
+
+@media (orientation: landscape) and (min-width: 760px) {
+    .contact .wrap {
+        margin: 0 90px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact {
+        padding: 30px 50px;
+    }
+
+    .contact h1 {
+        font-size: 42px;
+    }
+
+    .contact .wrap {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    .contact form, .contact .socials {
+        float: left;
+        width: 50%;
+    }
+
+    .contact input {
+        height: 46px;
+        font-size: 18px;
+    }
+    
+    .contact textarea {
+        font-size: 18px;
+    }
+    
+    .contact button {
+        line-height: 50px;
+        font-size: 20px;
+    }
+
+    .contact .socials {
+        padding-top: 0;
+    }
+
+    .social img {
+        height: 48px;
+    }
+
+    .social span {
+        padding: 0 0 0 14px;
+        line-height: 48px;
+        font-size: 14px;
+    }
+
+    .contact .social {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .contact button:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .social a {
+        transition: 0.6s;
+        opacity: 0.8;
+    }
+
+    .social a:hover {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1440px) {
+    .contact h1 {
+        font-size: 46px;
+    }
+
+    .contact input {
+        height: 46px;
+        font-size: 20px;
+    }
+
+    .contact textarea {
+        font-size: 20px;
+    }
+
+    .social img {
+        height: 50px;
+    }
+
+    .social span {
+        line-height: 50px;
+        font-size: 16px;
+    }
+
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #29a6dc;
+    color: white;
+    font-family: 'Saira', sans-serif;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+}
